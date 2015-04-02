@@ -1,0 +1,11 @@
+.reply {
+    .content {
+        text-align: center;
+        margin-top: 100px;
+        .day, .evening {
+            display: inline-block;
+            font-size: 2em;
+            margin: 0 40px;
+        }
+    }
+}

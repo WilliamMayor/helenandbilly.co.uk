@@ -1,0 +1,32 @@
+.home {
+    text-align: center;
+    .container {
+        padding-top: 50px;
+        .content {
+            .welcome {
+                margin: 20px 0;
+            }
+            h1, h2 {
+                font-family: 'Tangerine', cursive;
+            }
+            h1 {
+                font-size: 3em;
+                margin-bottom: 0;
+            }
+            h2 {
+                font-size: 2em;
+            }
+            nav {
+                ul {
+                    li {
+                        display: inline-block;
+                        margin: 0 50px;
+                    }
+                }
+            }
+            .intro {
+                margin-top: 40px;
+            }
+        }
+    }
+}

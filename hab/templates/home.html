@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Helen and Billy - We're Getting Married!</title>
+        <link href='http://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>
+        {% assets "css" %}<link rel="stylesheet" href="{{ ASSET_URL }}" />{% endassets %}
+    </head>
+    <body class="home">
+        <div class="container">
+            <div class="content">
+                <p class="welcome">Welcome to...</p>
+                <h1>Helen &amp; Billy's</h1>
+                <h2>Wedding</h2>
+                <nav>
+                    <ul>
+                        <li><a href="{{ url_for('bp.reply') }}">Reply</a></li>
+                        <li><a href="{{ url_for('bp.venue') }}">Venue</a></li>
+                        <li><a href="{{ url_for('bp.runningorder') }}">Running Order</a></li>
+                    </ul>
+                </nav>
+                <p class="intro">Blurb about the wedding blah blah blah. Include date and time etc.</p>
+            </div>
+        </div>
+        {% assets "js" %}<script type="text/javascript" src="{{ ASSET_URL }}"></script>{% endassets %}
+    </body>
+</html>

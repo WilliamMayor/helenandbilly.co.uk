@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Reply{% endblock %}
+{% block page %}reply{% endblock %}
+
+{% block content %}
+    <div class="day">
+        <a href="{{ url_for('bp.reply_day') }}">Day</a>
+    </div>
+    <div class="evening">
+        <a href="{{ url_for('bp.reply_evening') }}">Evening</a>
+    </div>
+{% endblock %}

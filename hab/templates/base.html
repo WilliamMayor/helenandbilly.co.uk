@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Helen and Billy - {% block title -%}We're Getting Married!{%- endblock %}</title>
+        {% assets "css" %}<link rel="stylesheet" href="{{ ASSET_URL }}" />{% endassets %}
+    </head>
+    <body class="base {% block page %}{% endblock %}">
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('bp.home') }}">Home</a></li>
+                <li><a href="{{ url_for('bp.reply') }}">Reply</a></li>
+                <li><a href="{{ url_for('bp.venue') }}">Venue</a></li>
+                <li><a href="{{ url_for('bp.runningorder') }}">Running Order</a></li>
+            </ul>
+        </nav>
+        <div class="content">{% block content %}
+            Nothing here yet
+        {% endblock %}</div>
+        {% assets "js" %}<script type="text/javascript" src="{{ ASSET_URL }}"></script>{% endassets %}
+    </body>
+</html>
