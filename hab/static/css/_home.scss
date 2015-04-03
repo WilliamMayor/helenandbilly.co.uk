@@ -1,7 +1,13 @@
 .home {
     text-align: center;
+    .arch {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
     .container {
-        padding-top: 50px;
+        margin-top: 10%;
         .content {
             .welcome {
                 margin: 20px 0;

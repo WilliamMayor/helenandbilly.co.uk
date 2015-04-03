@@ -7,6 +7,9 @@
         {% assets "css" %}<link rel="stylesheet" href="{{ ASSET_URL }}" />{% endassets %}
     </head>
     <body class="home">
+        <img class="arch"
+             src="{{ url_for('static', filename='images/arch.png') }}"
+             alt="Background pattern">
         <div class="container">
             <div class="content">
                 <p class="welcome">Welcome to...</p>
