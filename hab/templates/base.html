@@ -3,20 +3,29 @@
     <head>
         <meta charset="utf-8" />
         <title>Helen and Billy - {% block title -%}We're Getting Married!{%- endblock %}</title>
+        <link href='http://fonts.googleapis.com/css?family=Alex+Brush' rel='stylesheet' type='text/css'>
         {% assets "css" %}<link rel="stylesheet" href="{{ ASSET_URL }}" />{% endassets %}
     </head>
     <body class="base {% block page %}{% endblock %}">
-        <nav>
-            <ul>
-                <li><a href="{{ url_for('bp.home') }}">Home</a></li>
-                <li><a href="{{ url_for('bp.reply') }}">Reply</a></li>
-                <li><a href="{{ url_for('bp.venue') }}">Venue</a></li>
-                <li><a href="{{ url_for('bp.runningorder') }}">Running Order</a></li>
-            </ul>
-        </nav>
-        <div class="content">{% block content %}
-            Nothing here yet
-        {% endblock %}</div>
+        <div class="wrapper">
+            <div class="pattern">
+                <img class="bottom-left"
+                     src="{{ url_for('static', filename='images/bottom_left.png') }}"
+                     alt="Background pattern">
+                <img class="top-right"
+                     src="{{ url_for('static', filename='images/top_right.png') }}"
+                     alt="Background pattern">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('bp.home') }}">Home</a></li>
+                    <li><a href="{{ url_for('bp.reply') }}">Reply</a></li>
+                    <li><a href="{{ url_for('bp.venue') }}">Venue</a></li>
+                    <li><a href="{{ url_for('bp.runningorder') }}">Running Order</a></li>
+                </ul>
+            </nav>
+            <div class="content">{% block content %}{% endblock %}</div>
+        </div>
         {% assets "js" %}<script type="text/javascript" src="{{ ASSET_URL }}"></script>{% endassets %}
     </body>
 </html>

@@ -3,18 +3,20 @@
     <head>
         <meta charset="utf-8" />
         <title>Helen and Billy - We're Getting Married!</title>
-        <link href='http://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Alex+Brush' rel='stylesheet' type='text/css'>
         {% assets "css" %}<link rel="stylesheet" href="{{ ASSET_URL }}" />{% endassets %}
     </head>
     <body class="home">
-        <img class="arch"
-             src="{{ url_for('static', filename='images/arch.png') }}"
-             alt="Background pattern">
-        <div class="container">
+        <div class="wrapper">
+            <div class="pattern">
+                <img class="arch"
+                     src="{{ url_for('static', filename='images/arch.png') }}"
+                     alt="Background pattern">
+            </div>
             <div class="content">
                 <p class="welcome">Welcome to...</p>
                 <h1>Helen &amp; Billy's</h1>
-                <h2>Wedding</h2>
+                <h1>Wedding</h1>
                 <nav>
                     <ul>
                         <li><a href="{{ url_for('bp.reply') }}">Reply</a></li>
@@ -22,7 +24,7 @@
                         <li><a href="{{ url_for('bp.runningorder') }}">Running Order</a></li>
                     </ul>
                 </nav>
-                <p class="intro">Blurb about the wedding blah blah blah. Include date and time etc.</p>
+                <p class="intro">We are delighted to invite you to celebrate our wedding on Saturday 15th August 2015 at 3pm. Please use this site to reply to your invitiation, we've included some information about the venue and the details of the day. Please get in touch if you have any questions.</p>
             </div>
         </div>
         {% assets "js" %}<script type="text/javascript" src="{{ ASSET_URL }}"></script>{% endassets %}

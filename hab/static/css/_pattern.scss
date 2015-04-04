@@ -1,0 +1,32 @@
+html {
+    height: 100%;
+    width: 100%;
+    display: table;
+}
+body {
+    display: table-row;
+}
+.wrapper {
+    display: table-cell;
+    border: 10px solid #382F26;
+    position: relative;
+}
+.pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    .bottom-left {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 25%;
+    }
+    .top-right {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 5%;
+    }
+}

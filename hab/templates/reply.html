@@ -4,6 +4,7 @@
 {% block page %}reply{% endblock %}
 
 {% block content %}
+    {{ super() }}
     <div class="day">
         <a href="{{ url_for('bp.reply_day') }}">Day</a>
     </div>
