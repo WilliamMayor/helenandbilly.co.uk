@@ -1,0 +1,36 @@
+body {
+    //background-color: rgba(#F8ECC9, .5);
+    background-color: rgba(#E6D3CD, 1);
+}
+
+.base {
+    nav {
+        position: relative;
+        padding: 10px;
+        ul {
+            li {
+                display: inline-block;
+                margin-left: 20px;
+                font-size: larger;
+            }
+        }
+    }
+    .content {
+        position: relative;
+        padding: 0 10% 10%;
+        width: 600px;
+        margin: auto;
+        .inner {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #000;
+        }
+        h1 {
+            font-size: 5em;
+            font-weight: 300;
+            margin-bottom: 0;
+            font-family: 'Alex Brush', cursive;
+            text-align: center;
+        }
+    }
+}
