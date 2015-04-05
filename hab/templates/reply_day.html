@@ -3,6 +3,38 @@
 {% block title %}Reply | Day Guest{% endblock %}
 {% block page %}reply-day{% endblock %}
 
+{% macro field(field, swap=False) -%}
+    <div class="field {{ field.name }}{% if field.errors %} errors{% endif %}">
+        {% if not swap %}{{ field.label() }}{% endif %}
+        {% if field.description %}
+            <div class="help">
+                {{ field.description }}
+            </div>
+        {% endif %}
+        {{ field(**kwargs) }}
+        {% if swap %}{{ field.label() }}{% endif %}
+        <ul class="errors">
+            {% for error in field.errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{%- endmacro %}
+
 {% block content %}
-    Reply Day
+    <div class="container">
+        <h1>RSVP</h1>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            {{ field(form.name) }}
+            {{ field(form.email) }}
+            {{ field(form.response) }}
+            <p>Also, I/We would really like to...</p>
+            {{ field(form.speech, swap=True) }}
+            {{ field(form.song, swap=True) }}
+            {{ field(form.mehndi, swap=True) }}
+            {{ field(form.diet) }}
+            <div class="submit"><input type="submit" value="Send" /></div>
+        </form>
+    </div>
 {% endblock %}

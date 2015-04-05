@@ -1,4 +1,7 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, redirect, url_for
+
+from hab import mailgun
+from hab.forms import RSVPDayForm, RSVPEveningForm
 
 bp = Blueprint('bp', __name__, template_folder='templates')
 
@@ -13,14 +16,22 @@ def reply():
     return render_template('reply.html')
 
 
-@bp.route('/reply/day/')
+@bp.route('/reply/day/', methods=['GET', 'POST'])
 def reply_day():
-    return render_template('reply_day.html')
+    form = RSVPDayForm()
+    if form.validate_on_submit():
+        mailgun.send_emails(form)
+        return redirect(url_for('bp.home'))
+    return render_template('reply_day.html', form=form)
 
 
-@bp.route('/reply/evening/')
+@bp.route('/reply/evening/', methods=['GET', 'POST'])
 def reply_evening():
-    return render_template('reply_evening.html')
+    form = RSVPEveningForm()
+    if form.validate_on_submit():
+        mailgun.send_emails(form)
+        return redirect(url_for('bp.home'))
+    return render_template('reply_evening.html', form=form)
 
 
 @bp.route('/venue/')

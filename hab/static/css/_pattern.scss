@@ -12,7 +12,6 @@ body {
     position: relative;
 }
 .pattern {
-    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -29,4 +28,7 @@ body {
         right: 0;
         width: 5%;
     }
+}
+.home .pattern {
+    position: absolute;
 }

@@ -1,0 +1,3 @@
+SECRET_KEY = None
+MAILGUN_URL = None
+MAILGUN_API_KEY = None

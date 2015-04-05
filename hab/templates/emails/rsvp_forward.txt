@@ -1,0 +1,11 @@
+Hi Helen and Billy,
+
+You got an RSVP from the website:
+
+{% for f in form.fields() %}
+{{ f.label.text }}: {{ f.data }}
+{% endfor %}
+
+All the best,
+
+The RSVP Bot

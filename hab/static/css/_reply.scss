@@ -4,8 +4,44 @@
         margin-top: 100px;
         .day, .evening {
             display: inline-block;
-            font-size: 2em;
+            font-size: 3em;
+            font-family: 'Alex Brush', cursive;
             margin: 0 40px;
+            img {
+                width: 100px;
+                display: block;
+                margin: auto;
+            }
         }
+    }
+}
+.reply-day, .reply-evening {
+    form {
+        background-color: white;
+        padding: 20px;
+        border: 1px solid black;
+        .help {
+            margin-top: -0.5em;
+            margin-bottom: 0.75em;
+            font-size: smaller;
+        }
+        .response, .speech, .song, .mehndi {
+            label {
+                display: inline-block;
+                font-weight: normal;
+            }
+            input {
+                display: inline-block;
+                margin-left: 20px;
+            }
+        }
+        .diet, p {
+            margin-top: 0.75em;
+        }
+    }
+}
+.reply-evening {
+    input[type=submit] {
+        margin-top: 1em;
     }
 }
