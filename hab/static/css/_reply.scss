@@ -38,6 +38,11 @@
         .diet, p {
             margin-top: 0.75em;
         }
+        .field .errors {
+            font-size: smaller;
+            color: rgba(#f00, .5);
+            margin-top: -$base-spacing / 2;
+        }
     }
 }
 .reply-evening {
