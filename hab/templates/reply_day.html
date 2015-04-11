@@ -24,7 +24,7 @@
 {% block content %}
     <div class="container">
         <h1>RSVP</h1>
-        <form method="POST">
+        <form method="POST" action="{{ url_for('.reply_day') }}">
             {{ form.hidden_tag() }}
             {{ field(form.name) }}
             {{ field(form.email) }}
