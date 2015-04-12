@@ -1,7 +1,7 @@
 import logging
 
 from logentries import LogentriesHandler
-from flask import Blueprint, render_template, redirect, url_for
+from flask import Blueprint, render_template, redirect, url_for, request
 
 from hab import mailgun
 from hab.forms import RSVPDayForm, RSVPEveningForm
@@ -30,7 +30,7 @@ def reply_day():
     if form.validate_on_submit():
         log.info(str(form))
         mailgun.send_emails(form)
-        return redirect(url_for('bp.home'))
+        return redirect(url_for('bp.thanks', response=form.response.data))
     return render_template('reply_day.html', form=form)
 
 
@@ -40,8 +40,17 @@ def reply_evening():
     if form.validate_on_submit():
         log.info(str(form))
         mailgun.send_emails(form)
-        return redirect(url_for('bp.home'))
+        return redirect(url_for('bp.thanks', response=form.response.data))
     return render_template('reply_evening.html', form=form)
+
+
+@bp.route('/thanks/')
+def thanks():
+    response = request.args.get('response')
+    going = True if response == 'accept' else False
+    return render_template(
+        'thanks.html',
+        going=going)
 
 
 @bp.route('/venue/')
