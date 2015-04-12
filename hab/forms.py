@@ -25,6 +25,13 @@ class RSVPEveningForm(Form):
             self.song
         ]
 
+    def __repr__(self):
+        return u'<RSVP Evening from:%s email:%s response:%s song:%s>' % (
+            self.name.data,
+            self.email.data or 'Unknown',
+            'Yes' if self.response.data else 'No',
+            'Yes' if self.song.data else 'No')
+
 
 class RSVPDayForm(RSVPEveningForm):
     diet = TextAreaField(
@@ -43,3 +50,13 @@ class RSVPDayForm(RSVPEveningForm):
             self.mehndi,
             self.diet
         ]
+
+    def __repr__(self):
+        return u'<RSVP Day from:%s email:%s response:%s song:%s speech:%s mehndi:%s>%s</RSVP>' % (
+            self.name.data,
+            self.email.data or 'Unknown',
+            'Yes' if self.response.data else 'No',
+            'Yes' if self.song.data else 'No',
+            'Yes' if self.speech.data else 'No',
+            'Yes' if self.mehndi.data else 'No',
+            self.diet.data)
